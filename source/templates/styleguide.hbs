@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Turbo Styleguide</title>
+</head>
+<body>
+
+<header>
+  <h1>Turbo Styleguide</h1>
+  <div>{{pkg.version}}</div>
+</header>
+
+<nav>
+  {{#each (keys components) as |key|}}
+    <h3>{{pluralize (titleCase key)}}</h3>
+    
+    <ul class="list">
+      {{#each (filterByType components key) as |component|}}
+        <li><a href="{{component.id}}">{{component.name}}</a></li>
+      {{/each}}
+    </ul>
+  {{/each}}
+</nav>
+
+<main>
+  {{#each (keys components) as |key|}}
+    <h2>{{pluralize (titleCase key)}}</h2>
+
+    {{#each (filterByType components key) as |component|}}
+      <div class="component" id="{{components.id}}">
+          <h3>{{component.name}}</h3>
+      </div>
+    {{/each}}
+  {{/each}}
+</main>
+
+</body>
+</html>
