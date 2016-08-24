@@ -9,7 +9,7 @@ Styleguide plugin that takes component repositories and/or project component dir
 const styleguide = require('turbo-styleguide');
 
 styleguide({
-    Core: require('turbo-components')
+    Core: require('turbo-components'),
     Demo: './dist/components'
 }).pipe(gulp.dest('./dist/styleguide'));
 ```
@@ -43,6 +43,6 @@ __styles:String__: defines additional css rules to be appended after baseStyles.
 git clone git@github.com:krambuhl/turbo-styleguide.git
 cd turbo-styleguide
 npm link
-cd ../turbo-web
+cd /turbo-web
 npm link turbo-styleguide
 ```
